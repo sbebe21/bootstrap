@@ -75,10 +75,47 @@
 
 
         <div class="container">
-            <h1>tässä kiva mallisivu</h1>
-            <p>Tämä sisältö on .container luokan sisällä.</p>
-            <p>The .container luokka on osa bootstrap tyylejä.
-                Se tarjoaa sivun leveyteen reagoivan säiliön.</p>
+   <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2dldHR5aW1hZ2VzLTE0OTA1NzY1NDQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0=" alt="Oranssi kissa" class="d-block" style="width:100%">
+      <div class="carousel-caption">
+        <h3>Oranssi kissa</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://media.istockphoto.com/id/1293763250/photo/cute-kitten-licking-glass-table-with-copy-space.jpg?s=612x612&w=0&k=20&c=JbHxMGlHpB3BwgQChCDLt-Iwbl2MYX-SS_f8oQa8RO0=" alt="Harmaa kissa" class="d-block" style="width:100%">
+      <div class="carousel-caption">
+        <h3>Harmaa kissa</h3>
+      </div> 
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.ctfassets.net/qj2yxv39d6ig/2XyLFdTwW7YAwvncoacvOB/7f950bd9b44989190e1899dd13ec166b/Cute_Cat.jpeg" alt="Valkoinen kissa" class="d-block" style="width:100%">
+      <div class="carousel-caption">
+        <h3>Valkoinen kissa</h3>
+      </div>  
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
         </div>
     </main>
 
