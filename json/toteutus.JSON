@@ -4,8 +4,10 @@
   "kuva": "https://static.vecteezy.com/system/resources/thumbnails/053/156/648/small/stylish-cat-in-orange-sunglasses-and-checkered-jacket-for-cool-fashion-statement-photo.jpg",
   "opintojakso": {
     "nimi": "Digitekniikat",
-    "tunnus": "DIG4TA021",
-    "opintopisteet": "5"
+    "maara": "5kpl",
+    "osallistujat": "Kalevi Kalevinen", "Keijo Keijonen", "Silja Siljanen", "Milla Millanen", "Pernilla Pernillainen"
+    "aika": "13.1.-14.3.2024"
+    "kesto": "8 viikkoa"
   },
   "sisalto": [
     "low-code",
