@@ -2,7 +2,7 @@
   "otsikko": "JSON toteutussivu",
   "kuvaus": "Tällä sivustolle haetaan JSON-muotoista dataa toteutukseen liittyen",
   "kuva": "https://static.vecteezy.com/system/resources/thumbnails/053/156/648/small/stylish-cat-in-orange-sunglasses-and-checkered-jacket-for-cool-fashion-statement-photo.jpg",
-  "opintojakso": {
+  "toteutus": {
     "nimi": "Digitekniikat",
     "maara": "5kpl",
     "osallistujat": "Kalevi Kalevinen", "Keijo Keijonen", "Silja Siljanen", "Milla Millanen", "Pernilla Pernillainen"
