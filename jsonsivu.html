@@ -29,13 +29,13 @@
 
             var teksti = "";
 
-            teksti = "<h1>" + data.yritys + "</h1>";
+            teksti = "<h1>" + data.tietoa + "</h1>";
 
-            teksti = teksti + "<p>" + "<b>" + "Yhteysteidot" + "</b>" + "<br>"
+            teksti = teksti + "<p>" + "<b>" + "Tietoa" + "</b>" + "<br>"
 
-                + data.yhteystiedot.puhelin + "<br>"
+                + data.yhteystiedot.lisaa + "<br>"
 
-                + data.yhteystiedot.email + "</p>";
+                + data.yhteystiedot.vielakin + "</p>";
 
             document.getElementById("vastaus").innerHTML = teksti;
 
@@ -78,5 +78,6 @@
     </script>
 
 </body>
+
 
 </html>
