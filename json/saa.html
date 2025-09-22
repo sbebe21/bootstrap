@@ -49,8 +49,6 @@
          
             <script>
                 function haeSaa() {
-                    const saa= document.getElementById("saa").value;
-                    let saa = document.getElementById("saa").value;
 
                     fetch(`https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric`)
 .then(function (response) {
@@ -76,12 +74,12 @@
                     let weather = obj.weather[0].description;
                     let temp = obj.main.temp;
                     let wind = obj.wind.speed;
-                    document.getElementById("kello").innerHTML = "<b>" + time "</b>";
+                    document.getElementById("kello").innerHTML = "<b>" + time + "</b>";
                     document.getElementById("saa").innerHTML = "<b>" + weather + "</b>";
                     document.getElementById("lampo").innerHTML = "<b>" + temp + "</b>";
                     document.getElementById("tuuli").innerHTML = "<b>" + wind + "</b>";
                 }
-                
+                window.onload = haeSaa;
                         
             </script>
         </div>
