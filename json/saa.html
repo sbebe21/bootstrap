@@ -48,9 +48,32 @@
                     let saa = document.getElementById("saa").value;
 
                     fetch(`https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric`)
-
-                    response.json();
+.then(function (response) {
+                            if (!response.ok) {
+                                throw new Error("Tietoa ei pystytä hakemaan.");
+                            }
+                            return response.json();
+                        })
+                        .then(function (responseJson) {
+                            saa(responseJson, name);
+                        })
+                        .catch(function (error) {
+                            document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan.</p>";
+                            document.getElementById("kello").innerHTML = "";
+                            document.getElementById("saa").innerHTML = "";
+                            document.getElementById("lampo").innerHTML = "";
+                            document.getElementById("tuuli").innerHTML = "";
+                        });
                 }
+
+                function saatieto(obj, name) {
+                    let saaurl = https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric;
+                    document.getElementById("kello").innerHTML = "<b>" + time "</b>";
+                    document.getElementById("saa").innerHTML = "<b>" + weather + "</b>";
+                    document.getElementById("lampo").innerHTML = "<b>" + temp + "</b>";
+                    document.getElementById("tuuli").value = "<b>" + wind + "</b>";
+                }
+                
                         
             </script>
         </div>
