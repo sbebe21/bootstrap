@@ -41,9 +41,14 @@
 
         <div class="container"><br><br><br>
             <h1>Sää Helsingissä</h1>
+                        <p id="kello"></p>
+            <p id="saa"></p>
+            <p id="lampo"></p>
+            <p id="tuuli"></p>
+            <p id="vastaus"></p>
          
             <script>
-                function saa() {
+                function haeSaa() {
                     const saa= document.getElementById("saa").value;
                     let saa = document.getElementById("saa").value;
 
@@ -55,7 +60,7 @@
                             return response.json();
                         })
                         .then(function (responseJson) {
-                            saa(responseJson, name);
+                            saatieto(responseJson);
                         })
                         .catch(function (error) {
                             document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan.</p>";
@@ -67,11 +72,14 @@
                 }
 
                 function saatieto(obj, name) {
-                    let saaurl = https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric;
+                    let time = new Date(obj.dt * 1000).toLocaleTimeString();
+                    let weather = obj.weather[0].description;
+                    let temp = obj.main.temp;
+                    let wind = obj.wind.speed;
                     document.getElementById("kello").innerHTML = "<b>" + time "</b>";
                     document.getElementById("saa").innerHTML = "<b>" + weather + "</b>";
                     document.getElementById("lampo").innerHTML = "<b>" + temp + "</b>";
-                    document.getElementById("tuuli").value = "<b>" + wind + "</b>";
+                    document.getElementById("tuuli").innerHTML = "<b>" + wind + "</b>";
                 }
                 
                         
