@@ -40,11 +40,11 @@
             <h1>Pokemon-haku</h1>
             <p>
                 <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
-                <button onclick="poke()">Hae</button><br>
+                <button onclick="poke()">Hae</button><br><button onclick="kaanna()">Käännä</button><br>
             </p>
             <div id="nimi">Kirjoita laatikkoon Pokemonin nimi</div>
             <p id="kuva2"></p>
-            <p id="vastaus"></p> <!-- Tämä lisätty virheiden näyttämiseen -->
+            <p id="vastaus"></p>
 
             <script>
                 function poke() {
@@ -72,8 +72,40 @@
                     let pokeurl = obj.sprites.front_default;
                     document.getElementById("kuva2").innerHTML = "<img src='" + pokeurl + "'>";
                     document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
-                    document.getElementById("vastaus").innerHTML = ""; // Tyhjennetään virheilmoitus
+                    document.getElementById("vastaus").innerHTML = "";
                     document.getElementById("pokemonName").value = "";
+                }
+
+                function kaanna() {
+                    const pokeName = document.getElementById("pokemonName").value.toLowerCase();
+                    let name = document.getElementById("pokemonName").value;
+
+                    fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+                        .then(function (response) {
+                            if (!response.ok) {
+                                throw new Error("Pokemonia ei löytynyt");
+                            }
+                            return response.json();
+                        })
+                        .then(function (responseJson) {
+                            poketakakuva(responseJson, name);
+                        })
+                        .catch(function (error) {
+                            document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan.</p>";
+                            document.getElementById("kuva2").innerHTML = "";
+                            document.getElementById("nimi").innerHTML = "";
+                        });
+                }
+
+                        function poketakakuva(obj, name) {
+                    let pokeurl = obj.sprites.front_default;
+                    document.getElementById("kuva2").innerHTML = "<img src='" + pokeurl + "'>";
+                    document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
+                    document.getElementById("vastaus").innerHTML = "";
+                    document.getElementById("pokemonName").value = "";
+                    document.getElementById("weight").innerHTML = "<b>" + weight +"</b>";
+                    document.getElementById("height").innerHTML = "<b>" + height +"</b>";
+                    document.getElementById("order").innerHTML = "<b>" + order +"</b>";
                 }
             </script>
         </div>
