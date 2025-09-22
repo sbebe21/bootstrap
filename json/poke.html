@@ -40,7 +40,7 @@
             <h1>Pokemon-haku</h1>
             <p>
                 <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
-                <button onclick="poke()">Hae</button><br><button onclick="kaanna()">Käännä</button><br>
+                <button onclick="poke()">Hae</button><br><br><button onclick="kaanna()">Käännä</button><br>
             </p>
             <div id="nimi">Kirjoita laatikkoon Pokemonin nimi</div>
             <p id="kuva2"></p>
@@ -57,7 +57,7 @@
                     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
                         .then(function (response) {
                             if (!response.ok) {
-                                throw new Error("Pokemonia ei löytynyt");
+                                throw new Error("Tietoa ei pystytä hakemaan.");
                             }
                             return response.json();
                         })
@@ -100,11 +100,18 @@
                             document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan.</p>";
                             document.getElementById("kuva2").innerHTML = "";
                             document.getElementById("nimi").innerHTML = "";
+                             document.getElementById("weight").innerHTML = "";
+                             document.getElementById("height").innerHTML = "";
+                             document.getElementById("order").innerHTML = "";
                         });
                 }
 
                                function poketakakuva(obj, name) {
                     let pokeurl = obj.sprites.back_default;
+                    let weight = obj.weight;
+                    let height = obj.height;
+                    let order = obj.order;
+                                   
                     document.getElementById("kuva2").innerHTML = "<img src='" + pokeurl + "'>";
                     document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
                     document.getElementById("vastaus").innerHTML = "";
