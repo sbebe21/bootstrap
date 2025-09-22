@@ -80,9 +80,6 @@
                     document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
                     document.getElementById("vastaus").innerHTML = "";
                     document.getElementById("pokemonName").value = "";
-                    document.getElementById("weight").innerHTML = "<b>" + weight +"</b>";
-                    document.getElementById("height").innerHTML = "<b>" + height +"</b>";
-                    document.getElementById("order").innerHTML = "<b>" + order +"</b>";
                 }
 
                 function kaanna() {
@@ -105,6 +102,16 @@
                             document.getElementById("nimi").innerHTML = "";
                         });
                 }
+
+                               function poketakakuva(obj, name) {
+                    let pokeurl = obj.sprites.back_default;
+                    document.getElementById("kuva2").innerHTML = "<img src='" + pokeurl + "'>";
+                    document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
+                    document.getElementById("vastaus").innerHTML = "";
+                    document.getElementById("pokemonName").value = "";
+                    document.getElementById("weight").innerHTML = "<b>" + weight +"</b>";
+                    document.getElementById("height").innerHTML = "<b>" + height +"</b>";
+                    document.getElementById("order").innerHTML = "<b>" + order +"</b>";
 
             </script>
         </div>
